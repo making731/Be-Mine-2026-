@@ -6,7 +6,7 @@
   <style>
     body {
       background: linear-gradient(#ffdde1, #ee9ca7);
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
       height: 100vh;
       display: flex;
@@ -41,9 +41,10 @@
     }
   </style>
 </head>
+
 <body>
 
-  <div class="card">
+  <div class="card" id="card">
     <h1>Will you be my Valentine? 💖</h1>
     <p>You make every day sweeter.</p>
 
@@ -51,16 +52,21 @@
     <button id="no" onmouseover="moveNo()">No 🙃</button>
   </div>
 
-  <div style="text-align:center;">
-  <h1 style="color:#e63946;">Forever Us ❤️</h1>
-  <p>Grateful to spend our first Valentine’s together,</p>
-  <p>and for the many more still to come.</p>
-  <p>I love you forever.</p>
-  <p style="margin-top:20px;">
-    — Your husband,<br>
-    <strong>Mr. King</strong>
-  </p>
-</div>
+  <script>
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="text-align:center;">
+          <h1 style="color:#e63946;">Forever Us ❤️</h1>
+          <p>Grateful to spend our first Valentine’s together,</p>
+          <p>and for the many more still to come.</p>
+          <p>I love you forever.</p>
+          <p style="margin-top:20px;">
+            — Your husband,<br>
+            <strong>Mr. King</strong>
+          </p>
+        </div>
+      `;
+    }
 
     function moveNo() {
       const noBtn = document.getElementById("no");
